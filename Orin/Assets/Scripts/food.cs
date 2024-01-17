@@ -27,5 +27,6 @@ public class food : MonoBehaviour
     {
         FindObjectOfType<LevelControler>().ChackFood(gameObject.tag);
         Debug.Log(gameObject.tag);
+        Destroy(gameObject);
     }
 }
