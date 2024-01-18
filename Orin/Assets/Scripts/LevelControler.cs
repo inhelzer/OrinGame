@@ -8,6 +8,7 @@ public class LevelControler : MonoBehaviour
     public float levelSpeed;
     public Vector3 endPos;
     public GameObject[] foodParts;
+    [SerializeField] GameObject goodJob;
 
     [SerializeField] GameObject[] challange;
     [SerializeField] int currentFood = 0;
@@ -41,7 +42,19 @@ public class LevelControler : MonoBehaviour
         if (challange[currentFood].gameObject.tag == name)
         {
             Debug.Log("!!!!!!");
-            currentFood++;
+            if(currentFood > 6)
+            {
+                currentFood++;
+            }
+            else
+            {
+                FindObjectOfType<trophys>().Good();
+            }
+        }
+
+        else
+        {
+            FindObjectOfType<trophys>().Bad();
         }
     }
 }

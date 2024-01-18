@@ -448,7 +448,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.26486292, g: 0.600386, b: 0.6037736, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1132,7 +1132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8125385446395283363, guid: d7dc12098edf942ec99654a059329ac5, type: 3}
       propertyPath: timeBetweenSpawns
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8125385446395283363, guid: d7dc12098edf942ec99654a059329ac5, type: 3}
       propertyPath: foodParts.Array.size
