@@ -8,16 +8,16 @@ public class LevelControler : MonoBehaviour
     public float levelSpeed;
     public Vector3 endPos;
     public GameObject[] foodParts;
-    [SerializeField] GameObject goodJob;
+    [SerializeField] GameObject burger;
 
-    [SerializeField] GameObject[] challange;
+    public GameObject[] challange;
     [SerializeField] int currentFood = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         endPos = endPoint.transform.position;
-        challange = new GameObject[6];
+        challange = new GameObject[7];
         CreateChalange();
     }
 
@@ -32,29 +32,33 @@ public class LevelControler : MonoBehaviour
         challange[0] = foodParts[0];
         challange[1] = foodParts[Random.Range(2, foodParts.Length)];
         challange[2] = foodParts[Random.Range(2, foodParts.Length)];
-        challange[3] = foodParts[Random.Range(2, foodParts.Length)];
+        challange[3] = burger;
         challange[4] = foodParts[Random.Range(2, foodParts.Length)];
-        challange[5] = foodParts[1];
+        challange[5] = foodParts[Random.Range(2, foodParts.Length)];
+        challange[6] = foodParts[1];
+        currentFood = 0;
+        FindObjectOfType<Challange>().NewCallange();
     }
 
     public void ChackFood(string name)
     {
+        if (challange[currentFood].gameObject.tag != name)
+        {
+            FindObjectOfType<trophys>().CreateBad();
+        }
+
         if (challange[currentFood].gameObject.tag == name)
         {
             Debug.Log("!!!!!!");
-            if(currentFood > 6)
+            currentFood++;
+            if (currentFood >= 7)
             {
-                currentFood++;
+                FindObjectOfType<trophys>().CreateGood();
+                CreateChalange();
             }
-            else
-            {
-                FindObjectOfType<trophys>().Good();
-            }
+            
         }
 
-        else
-        {
-            FindObjectOfType<trophys>().Bad();
-        }
+        
     }
 }

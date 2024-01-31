@@ -7,8 +7,12 @@ public class trophys : MonoBehaviour
     [SerializeField] GameObject bad;
     [SerializeField] GameObject good;
     [SerializeField] GameObject veryGood;
-    [SerializeField] float shortDelay;
+    [SerializeField] float shortDelay = 1f;
     [SerializeField] float longDelay;
+
+   
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +26,31 @@ public class trophys : MonoBehaviour
         
     }
 
-    public void Bad()
+    public void CreateBad()
     {
+        
         GameObject badObject = 
-
         Instantiate(bad, transform.position, Quaternion.identity) as GameObject;
         Destroy(badObject, shortDelay);
+        
+        
     }
 
-    public void Good()
+    public void CreateGood()
     {
-        Instantiate(good, transform.position, Quaternion.identity);
+        
+        GameObject goodObject =
+        Instantiate(good, transform.position, Quaternion.identity) as GameObject;
+        Destroy(goodObject, shortDelay);
+        
+
+
     }
 
-    public void VeryGood()
+    public void CreateVeryGood()
     {
-        Instantiate(veryGood, transform.position, Quaternion.identity);
+        GameObject veryGoodObject =
+        Instantiate(veryGood, transform.position, Quaternion.identity) as GameObject;
+        Destroy(veryGoodObject, shortDelay);
     }
 }

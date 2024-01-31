@@ -8,6 +8,7 @@ public class food : MonoBehaviour
     float moveSpeed;
     Vector3 moveVector;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,15 @@ public class food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += moveVector * Time.deltaTime;
+        if(gameObject.tag != "Burger")
+        {
+            transform.position += moveVector * Time.deltaTime;
+        }
+        
+        
     }
+
+   
 
     private void OnMouseDown()
     {
