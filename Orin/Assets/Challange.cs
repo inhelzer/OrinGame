@@ -16,7 +16,11 @@ public class Challange : MonoBehaviour
     void Start()
     {
         foodsCallange = new GameObject[7];
-        
+        NewCallange();
+
+
+
+
 
     }
 
